@@ -1,28 +1,32 @@
-package ArrayPkg;
+package StringPkg;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class OccuranceOfOnlyDuplicateNosWithCount {
 
 	public static void main(String[] args) {
 		
-		int arr[]= {10,20,20,30,30,40,50};
+String str="football";
 		
-		Map<Integer, Integer>map= new HashMap<Integer,Integer>();
-		
-		for(Integer ch: arr) {
+		Map<Character,Integer> map= new HashMap<Character,Integer>();
+		for(char ch : str.toCharArray()) {
 			if(map.get(ch)==null) {
+				
 				map.put(ch, 1);
 			}
-			else {
+			else{
 				map.put(ch, map.get(ch)+1);
 			}
-			
 			if(map.get(ch)>1) {
-				System.out.println(ch+"-"+map.get(ch));
+				System.out.println(ch+" "+map.get(ch));
 			}
 		}
+		System.out.println();
+		map.forEach(  (key,value)->{System.out.println(key+" "+value);}   );
+		
+		
 
 	}
 
